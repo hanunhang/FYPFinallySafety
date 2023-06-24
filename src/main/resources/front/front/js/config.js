@@ -29,24 +29,17 @@ var swiper = {
  * 个人中心菜单
  */
 var centerMenu = [{
-	name: 'Individual Ccenter',
+	name: '个人中心',
 	url: '../' + localStorage.getItem('userTable') + '/center.html'
 }, 
 {
-	name: 'Upload Report',
-	url: '../uploadReport/addReport.html'
+	name: '我的发布',
+	url: '../forum/list-my.html'
 },
-    {
-        name: 'View Report',
-        url: '../viewReport/viewReport.html'
-    },
-    {
-        name: 'Map',
-        url: '../map/map.html'
-    },
+
 {
-        name: 'SOS',
-        url: '../sos/sos.html'
+        name: '我的收藏',
+        url: '../storeup/list.html'
 }
 ]
 
@@ -64,7 +57,11 @@ var indexNav = [
 {
 	name: 'Map',
 	url: './pages/map/map.html'
-},
+}, 
+{
+	name: 'Statistic Dashboard',
+	url: './pages/statisticDashboard/viewStatisticDashboard.html'
+}, 
 
 {
 	name: 'SOS',

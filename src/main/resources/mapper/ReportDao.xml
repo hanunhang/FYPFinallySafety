@@ -51,14 +51,27 @@
             resultType="com.entity.view.ReportLocationCount" >
         select a.*,FORMAT(a.lotNum/a.totalNum*100,2) percentage from (
          select r.location,count(1) as lotNum,
-                (select count(1) from report t where t.`name`=#{userId} and t.reporttype=#{type}) as totalNum
-         from report r where r.`name`=#{userId} and r.reporttype=#{type} GROUP BY r.location ) as a order by a.lotNum desc
+                (select count(1) from report t where t.reporttype=#{type}
+                    <if test="userId != 'admin'">
+                        and t.`name`=#{userId}
+                    </if>
+                ) as totalNum
+         from report r where r.reporttype=#{type}
+                        <if test="userId != 'admin'">
+                            and r.`name`=#{userId}
+                        </if>
+                        GROUP BY r.location ) as a order by a.lotNum desc
     </select>
 
     <select id="queryLocationLineCount"
             resultType="com.entity.view.ReportLocationCount" >
         select a.dateStr,count(1) lotNum from (
-              select LEFT(r.datetime,7) dateStr from report r where r.`name`=#{userId} and r.reporttype=#{type}) as a group by a.dateStr ORDER BY a.dateStr
+              select LEFT(r.datetime,7) dateStr from report r
+              where r.reporttype=#{type}
+                    <if test="userId != 'admin'">
+                        and r.`name`=#{userId}
+                    </if>
+              ) as a group by a.dateStr ORDER BY a.dateStr
     </select>
 
 </mapper>
