@@ -30,6 +30,9 @@
 		background-size: cover;
 		background-position: center;
 	}
+	.image-button {
+		cursor: pointer;
+	}
 	#test1 {
 		overflow: hidden;
 	}
@@ -988,7 +991,7 @@
 						<div class="layui-col-md6">
 							<div class="layui-panel">
 								<div style="padding: 50px 30px;">
-									<img :style='{"padding":"0","boxShadow":"0 0 6px rgba(0,0,0,0)","margin":"0","borderColor":"#ccc","backgroundColor":"#ccc","borderRadius":"20px","borderWidth":"0","width":"100%","borderStyle":"solid","height":"100%"}' src="./交通事故.jpg">
+									<img :style='{"padding":"0","boxShadow":"0 0 6px rgba(0,0,0,0)","margin":"0","borderColor":"#ccc","backgroundColor":"#ccc","borderRadius":"20px","borderWidth":"0","width":"100%","borderStyle":"solid","height":"100%"}' class="image-button" src="./交通事故.jpg" onclick="redirectToPage()">
 									<div style="text-align: center; color: aqua;">
 										Traffic Accident
 									</div>
@@ -998,7 +1001,7 @@
 						<div class="layui-col-md6">
 							<div class="layui-panel">
 								<div style="padding: 50px 30px;">
-									<img :style='{"padding":"0","boxShadow":"0 0 6px rgba(0,0,0,0)","margin":"0","borderColor":"#ccc","backgroundColor":"#ccc","borderRadius":"20px","borderWidth":"0","width":"100%","borderStyle":"solid","height":"100%"}' src="./犯罪现场.jpg">
+									<img :style='{"padding":"0","boxShadow":"0 0 6px rgba(0,0,0,0)","margin":"0","borderColor":"#ccc","backgroundColor":"#ccc","borderRadius":"20px","borderWidth":"0","width":"100%","borderStyle":"solid","height":"100%"}' class="image-button" src="./犯罪现场.jpg" onclick="redirectToPage6()">
 									<div style="text-align: center; color: aqua;">
 										Crime Sence
 									</div>
@@ -1036,11 +1039,11 @@
 					<span>Functions</span><span>Safety Functions</span>
 				</div>
 				<div class="layui-btn-container" style="text-align: center;">
-					<button type="button" class="layui-btn" onclick="redirectToPage1">Upload Report</button>
-					<button type="button" class="layui-btn" onclick="redirectToPage2">View Report</button>
-					<button type="button" class="layui-btn layui-btn-normal" onclick="redirectToPage3">Map</button>
-					<button type="button" class="layui-btn layui-btn-warm" onclick="redirectToPage4">StatisticDashboard</button>
-					<button type="button" class="layui-btn layui-btn-danger" onclick="redirectToPage5">SOS</button>
+					<button @click="jump('../uploadreport/addReport.html')" type="button" class="layui-btn">Upload Report</button>
+					<button @click="jump('../viewreport/viewReport.html')" type="button" class="layui-btn layui-btn-normal">View Report</button>
+					<button @click="jump('../map/map.html')" type="button" class="layui-btn layui-btn-warm">Map</button>
+					<!--					<button type="button" class="layui-btn " onclick="redirectToPage4">StatisticDashboard</button>-->
+					<button @click="jump('../sos/sos.html')" type="button" class="layui-btn layui-btn-danger">SOS</button>
 				</div>
 				<!-- <div class="list">
                     <div class="swiper-container" id="listsshequchangdi">
@@ -1484,6 +1487,16 @@
 				});
 			});
 		}
+	}
+</script>
+<script>
+	function redirectToPage() {
+		// 执行页面跳转操作，例如：
+		window.location.href = "../uploadReport/TrafficReport.html";
+	}
+	function redirectToPage6() {
+		// 执行页面跳转操作，例如：
+		window.location.href = "../uploadReport/CrimeReport.html";
 	}
 </script>
 <!--点击按钮跳转-->
