@@ -34,7 +34,7 @@
 			   </div>
 			 </div> -->
 			<el-form-item label="Resident name" class="input" v-if="tableName=='jumin'">
-			  <el-input v-model="ruleForm.juminxingming" autocomplete="off" placeholder="residen name"  />
+			  <el-input v-model="ruleForm.juminxingming" autocomplete="off" placeholder="resident name"  />
 			</el-form-item>
 			<!-- <div v-if="tableName=='jumin'" class="input-group">
 			   <div class="label">Age</div>

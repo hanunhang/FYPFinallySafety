@@ -2,7 +2,7 @@
   <div class="login">
     <div class="login-bgc"></div>
     <div class="login-form">
-      <p class="title">公共场所不建议自动登录，以防账号丢失</p>
+      <p class="title">Automatic login is not recommended in public places to prevent account loss</p>
       <el-form
         v-if="loginshow"
         :rules="rules"
@@ -12,17 +12,17 @@
       >
         <div style="padding-left: 40px; padding-right: 40px; padding-top: 20px">
           <el-form-item prop="name">
-            <el-input placeholder="请输入账号" v-model="form.name"></el-input>
+            <el-input placeholder="Please enter username" v-model="form.name"></el-input>
           </el-form-item>
           <el-form-item prop="password">
             <el-input
               type="password"
-              placeholder="请输入密码"
+              placeholder="Please enter password"
               v-model="form.password"
             ></el-input>
           </el-form-item>
-          <p @click="loginsave" class="button">登录</p>
-          <p @click="reset" class="zhuce">注册resident</p>
+          <p @click="loginsave" class="button">Login</p>
+          <p @click="reset" class="zhuce">Register resident</p>
         </div>
       </el-form>
       <el-form
@@ -34,24 +34,24 @@
       >
         <div style="padding-left: 40px; padding-right: 40px; padding-top: 20px">
           <el-form-item prop="name">
-            <el-input placeholder="请输入账号" v-model="form.name"></el-input>
+            <el-input placeholder="Please enter username" v-model="form.name"></el-input>
           </el-form-item>
           <el-form-item prop="password">
             <el-input
               type="password"
-              placeholder="请输入密码"
+              placeholder="Please enter password"
               v-model="form.password"
             ></el-input>
           </el-form-item>
           <el-form-item prop="passwords">
             <el-input
               type="password"
-              placeholder="请输入再次确认密码"
+              placeholder="Please enter password again"
               v-model="form.passwords"
             ></el-input>
           </el-form-item>
-          <p @click="zhuce" class="button">注册</p>
-          <p @click="logins" class="zhuce">已有账号登录</p>
+          <p @click="zhuce" class="button">Register</p>
+          <p @click="logins" class="zhuce">Existing account login</p>
         </div>
       </el-form>
     </div>
@@ -70,10 +70,10 @@ export default {
       },
       loginshow: true,
       rules: {
-        name: [{ required: true, message: "请输入用户名", trigger: "blur" }],
-        password: [{ required: true, message: "请输入密码", trigger: "blur" }],
+        name: [{ required: true, message: "Please enter username", trigger: "blur" }],
+        password: [{ required: true, message: "Please enter password", trigger: "blur" }],
         passwords: [
-          { required: true, message: "请输入再次确认密码", trigger: "blur" },
+          { required: true, message: "Please enter password again", trigger: "blur" },
         ],
       },
     };
@@ -99,7 +99,7 @@ export default {
               if (res.data.code == 0) {
                 this.loginshow = true;
                 this.$refs.ruleForms.resetFields();
-                this.$message.success("注册成功");
+                this.$message.success("Register Successful");
               } else {
                 this.$message.error(res.data.msg);
               }
@@ -125,7 +125,7 @@ export default {
               if (res.data.code == "0") {
                 this.$storage.set("Token", res.data.token);
                 // sessionStorage.setItem("token", res.data.token)
-                this.$message.success("登录成功");
+                this.$message.success("Login Successful");
                 if (this.$route.query.source == "1") {
                   this.$router.push("/event/homerulel");
                 } else {
