@@ -4,7 +4,7 @@
     <div v-if="showFlag">
       <el-form :inline="true" :model="searchForm" class="form-content">
         <el-row  :gutter="20" class="slt" :style="{justifyContent:contents.searchBoxPosition=='1'?'flex-start':contents.searchBoxPosition=='2'?'center':'flex-end'}">
-                <el-form-item :label="contents.inputTitle == 1 ? '公告内容' : ''">
+                <el-form-item :label="contents.inputTitle == 1 ? 'Description' : ''">
                   <el-input v-if="contents.inputIcon == 0" v-model="searchForm.description" placeholder="description" clearable></el-input>
                 </el-form-item>
           <el-form-item>
@@ -425,8 +425,8 @@ export default {
         : this.dataListSelections.map(item => {
             return Number(item.annoucementid);
           });
-      this.$confirm(`确定进行[${id ? "Delete" : "批量Delete"}]操作?`, "提示", {
-        confirmButtonText: "确定",
+      this.$confirm(`Confirm process[${id ? "Delete" : "All Delete"}]Process?`, "tips", {
+        confirmButtonText: "Confirm",
         cancelButtonText: "cancel",
         type: "warning"
       }).then(() => {
@@ -437,7 +437,7 @@ export default {
         }).then(({ data }) => {
           if (data && data.code === 0) {
             this.$message({
-              message: "操作成功",
+              message: "Successfully",
               type: "success",
               duration: 1500,
               onClose: () => {

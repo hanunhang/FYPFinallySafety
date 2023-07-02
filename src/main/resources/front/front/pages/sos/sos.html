@@ -163,11 +163,11 @@
 <hr>
 
 
-<div id="contact-list" style="text-align: center;">
-  <h3>Emergency Contacts:</h3>
-  <div id="emergencyContacts"></div>
-</div>
-<hr>
+<!--<div id="contact-list" style="text-align: center;">-->
+<!--  <h3>Emergency Contacts:</h3>-->
+<!--  <div id="emergencyContacts"></div>-->
+<!--</div>-->
+<!--<hr>-->
 
 <!--<div class="sos-log" style="text-align: center;">
     <h3>SOS Log:</h3>
@@ -245,29 +245,42 @@
     sendEmergencyEmail();
   });
 
-  // 发送紧急邮件函数
   function sendEmergencyEmail() {
-    // 获取紧急联系人列表
-    /*var contacts = document.getElementsByClassName("contact");
-    var emailRecipients = [];
-    for (var i = 0; i < contacts.length; i++) {
-        var email = contacts[i].querySelector("p:nth-child(2)").textContent.split(":")[1].trim();
-        emailRecipients.push(email);
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+
+        var emailContent = "This is an emergency alert. Please take immediate action!   " + "Longitude：" + longitude + ", Latitude：" + latitude;
+        var emailSubject = "Emergency Alert";
+        var emailRecipient = "hankun@student.usm.my";
+
+        var mailtoLink = "mailto:" + emailRecipient + "?subject=" + encodeURIComponent(emailSubject) + "&body=" + encodeURIComponent(emailContent);
+
+        window.location.href = mailtoLink;
+      }, function(error) {
+        console.log("无法获取位置信息: " + error.message);
+      });
+    } else {
+      console.log("浏览器不支持地理定位功能");
     }
-    */
-    // 构建邮件内容
-    var recipient = "hankun@student.usm.my"; // 设置收件人邮箱
-    var subject = "Emergency Alert";
-    var body = "This is an emergency alert. Please take immediate action!";
-
-    // 构建邮件链接
-    var mailtoLink = "mailto:" + recipient + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
-    //var mailtoLink = "mailto:" + emailRecipients.join(",") + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
-
-    // 打开邮件客户端发送邮件
-    window.location.href = mailtoLink;
   }
 
+  // // 发送紧急邮件函数
+  // function sendEmergencyEmail() {
+  //   // 构建邮件内容
+  //   var currentAddress = window.location.href;
+  //   var recipient = "hankun@student.usm.my"; // 设置收件人邮箱
+  //   var subject = "Emergency Alert";
+  //   var body = "This is an emergency alert. Please take immediate action!" + currentAddress;
+  //
+  //   // 构建邮件链接
+  //   var mailtoLink = "mailto:" + recipient + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+  //   //var mailtoLink = "mailto:" + emailRecipients.join(",") + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+  //
+  //   // 打开邮件客户端发送邮件
+  //   window.location.href = mailtoLink;
+  // }
 </script>
 <!--定位-->
 <script>

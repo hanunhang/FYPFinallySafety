@@ -35,7 +35,7 @@
 			<div id="echart6" style="width: 100%;height: 100%;"></div>
 		</div>
 	</div>
-	<el-button class="btn-close" @click="back()">返回</el-button>
+	<el-button class="btn-close" @click="back()">Back</el-button>
   </div>
 </template>
 <script>

@@ -22,45 +22,45 @@
         </div>
       </el-col> -->
       <el-col :span="12">
-        <el-form-item class="input" v-if="type!='info'"  label="位置纬度" prop="announcementlatitude">
+        <el-form-item class="input" v-if="type!='info'"  label="Latitude" prop="announcementlatitude">
           <el-input v-model="ruleForm.announcementlatitude" 
-              placeholder="位置纬度" clearable  :readonly="ro.announcementlatitude"></el-input>
+              placeholder="Latitude" clearable  :readonly="ro.announcementlatitude"></el-input>
         </el-form-item>
         <div v-else>
-          <el-form-item class="input" label="位置纬度" prop="announcementlatitude">
+          <el-form-item class="input" label="Latitude" prop="announcementlatitude">
               <el-input v-model="ruleForm.announcementlatitude" 
-                placeholder="位置纬度" readonly></el-input>
+                placeholder="Latitude" readonly></el-input>
           </el-form-item>
         </div>
       </el-col>
       <el-col :span="12">
-        <el-form-item class="input" v-if="type!='info'"  label="位置经度" prop="announcemnetlongitude">
+        <el-form-item class="input" v-if="type!='info'"  label="Longitude" prop="announcemnetlongitude">
           <el-input v-model="ruleForm.announcemnetlongitude" 
-              placeholder="位置经度" clearable  :readonly="ro.announcemnetlongitude"></el-input>
+              placeholder="Longitude" clearable  :readonly="ro.announcemnetlongitude"></el-input>
         </el-form-item>
         <div v-else>
-          <el-form-item class="input" label="位置经度" prop="announcemnetlongitude">
+          <el-form-item class="input" label="Longitude" prop="announcemnetlongitude">
               <el-input v-model="ruleForm.announcemnetlongitude" 
-                placeholder="位置经度" readonly></el-input>
+                placeholder="Longitude" readonly></el-input>
           </el-form-item>
         </div>
       </el-col>
       <el-col :span="12">
-        <el-form-item class="input" v-if="type!='info'"  label="公告内容" prop="announcementdescription">
+        <el-form-item class="input" v-if="type!='info'"  label="Description" prop="announcementdescription">
           <el-input v-model="ruleForm.announcementdescription" 
-              placeholder="公告内容" clearable  :readonly="ro.announcementdescription"></el-input>
+              placeholder="Announcement Description" clearable  :readonly="ro.announcementdescription"></el-input>
         </el-form-item>
         <div v-else>
-          <el-form-item class="input" label="公告内容" prop="announcementdescription">
+          <el-form-item class="input" label="Description" prop="announcementdescription">
               <el-input v-model="ruleForm.announcementdescription" 
-                placeholder="公告内容" readonly></el-input>
+                placeholder="Announcement Description" readonly></el-input>
           </el-form-item>
         </div>
       </el-col>
       <el-col :span="24">  
         <el-form-item class="upload" v-if="type!='info' && !ro.announcementphoto" label="Photo" prop="announcementphoto">
           <file-upload
-          tip="点击上传居民照片"
+          tip="Upload Photo"
           action="file/upload"
           :limit="3"
           :multiple="true"
@@ -76,9 +76,9 @@
       </el-col>
       </el-row>
       <el-form-item class="btn">
-        <el-button  v-if="type!='info'" type="primary" class="btn-success" @click="onSubmit">提交</el-button>
+        <el-button  v-if="type!='info'" type="primary" class="btn-success" @click="onSubmit">Submit</el-button>
         <el-button v-if="type!='info'" class="btn-close" @click="back()">cancel</el-button>
-        <el-button v-if="type=='info'" class="btn-close" @click="back()">返回</el-button>
+        <el-button v-if="type=='info'" class="btn-close" @click="back()">Back</el-button>
       </el-form-item>
     </el-form>
     
@@ -96,7 +96,7 @@ export default {
       if(!value){
         callback();
       } else if (!checkIdCard(value)) {
-        callback(new Error("请输入正确的身份证号码"));
+        callback(new Error("Wrong ID"));
       } else {
         callback();
       }
@@ -105,7 +105,7 @@ export default {
       if(!value){
         callback();
       } else if (!isURL(value)) {
-        callback(new Error("请输入正确的URL地址"));
+        callback(new Error("Wrong URL address"));
       } else {
         callback();
       }
@@ -114,7 +114,7 @@ export default {
       if(!value){
         callback();
       } else if (!isMobile(value)) {
-        callback(new Error("请输入正确的手机号码"));
+        callback(new Error("Wrong phone number"));
       } else {
         callback();
       }
@@ -123,7 +123,7 @@ export default {
       if(!value){
         callback();
       } else if (!isPhone(value)) {
-        callback(new Error("请输入正确的电话号码"));
+        callback(new Error("Wrong phone number"));
       } else {
         callback();
       }
@@ -132,7 +132,7 @@ export default {
       if(!value){
         callback();
       } else if (!isEmail(value)) {
-        callback(new Error("请输入正确的邮箱地址"));
+        callback(new Error("Wrong email address"));
       } else {
         callback();
       }
@@ -141,7 +141,7 @@ export default {
       if(!value){
         callback();
       } else if (!isNumber(value)) {
-        callback(new Error("请输入数字"));
+        callback(new Error("Please enter number"));
       } else {
         callback();
       }
@@ -150,7 +150,7 @@ export default {
       if(!value){
         callback();
       } else if (!isIntNumer(value)) {
-        callback(new Error("请输入整数"));
+        callback(new Error("Please enter integer"));
       } else {
         callback();
       }
@@ -174,13 +174,13 @@ export default {
           xingbieOptions: [],
       rules: {
           announcementlatitude: [
-                { required: true, message: '位置纬度不能为空', trigger: 'blur' },
+                { required: true, message: 'Latitude cannot be empty', trigger: 'blur' },
           ],
           announcemnetlongitude: [
-                { required: true, message: '位置经度不能为空', trigger: 'blur' },
+                { required: true, message: 'Longitude cannot be empty', trigger: 'blur' },
           ],
           announcementdescription: [
-			   { required: true, message: '公告内容不能为空', trigger: 'blur' },
+			   { required: true, message: 'Description cannot be empty', trigger: 'blur' },
           ]
       }
     };
@@ -383,7 +383,7 @@ var objcross = this.$storage.getObj('crossObj');
 					 }).then(({ data }) => {
 					   if (data && data.code === 0) {
 					     this.$message({
-					       message: "操作成功",
+					       message: "Successfully",
 					       type: "success",
 					       duration: 1500,
 					       onClose: () => {
@@ -411,7 +411,7 @@ var objcross = this.$storage.getObj('crossObj');
 			 }).then(({ data }) => {
 			   if (data && data.code === 0) {
 			     this.$message({
-			       message: "操作成功",
+			       message: "Successfully",
 			       type: "success",
 			       duration: 1500,
 			       onClose: () => {

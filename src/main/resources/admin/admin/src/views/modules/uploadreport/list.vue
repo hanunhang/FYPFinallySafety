@@ -4,7 +4,7 @@
     <div v-if="showFlag">
       <el-form :inline="true" :model="searchForm" class="form-content">
         <el-row  :gutter="20" class="slt" :style="{justifyContent:contents.searchBoxPosition=='1'?'flex-start':contents.searchBoxPosition=='2'?'center':'flex-end'}">
-                <el-form-item :label="contents.inputTitle == 1 ? '内容' : ''">
+                <el-form-item :label="contents.inputTitle == 1 ? 'Content' : ''">
                   <el-input v-if="contents.inputIcon == 0" v-model="searchForm.description" placeholder="description" clearable></el-input>
                 </el-form-item>
           <el-form-item>
