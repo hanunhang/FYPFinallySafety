@@ -208,20 +208,18 @@
             <div  :style='{"padding":"10px","boxShadow":"0 0 0px rgba(255,0,0,.8)","margin":"0 0 10px 0","borderColor":"rgba(255,0,0,.3)","backgroundColor":"#fff","borderRadius":"4px","borderWidth":"0","borderStyle":"solid"}' class="layui-form-item" pane>
                 <label
                         :style='{"width":"110px","padding":"0 12px 0 0","fontSize":"16px","color":"rgba(0, 0, 0, 1)","textAlign":"right"}'
-                        class="layui-form-label">Accident Category: </label>
+                        class="layui-form-label">Crime Category: </label>
                 <div class="layui-input-block">
                     <select name="classification" id="classification" lay-filter="classification" >
                         <option value="">Please Choose</option>
-                        <option value="Rear-end collision">Rear-end collision</option>
-                        <option value="Head-on collision">Head-on collision</option>
-                        <option value="Side-impact collision">Side-impact collision</option>
-                        <option value="Pedestrian accident">Pedestrian accident</option>
-                        <option value="Bicycle accident">Bicycle accident</option>
-                        <option value="Motorcycle accident">Motorcycle accident</option>
-                        <option value="Rollover accident">Rollover accident</option>
-                        <option value="Intersection collision">Intersection collision</option>
-                        <option value="Run-off-road accident">Run-off-road accident</option>
-                        <option value="Multi-vehicle pile-up">Multi-vehicle pile-up</option>
+                        <option value="Murder">Murder</option>
+                        <option value="Robbery">Robbery</option>
+                        <option value="Theft">Theft</option>
+                        <option value="Fraud">Fraud</option>
+                        <option value="Huamn Trafficking">Huamn Trafficking</option>
+                        <option value="Rape">Rape</option>
+                        <option value="Abuse">Abuse</option>
+                        <option value="Drug Offenses">Drug Offenses</option>
                         <!--<option v-for="(item,index) in accidentCategory" v-bind:key="index" :value="item">{{item}}</option>-->
                     </select>
                 </div>
@@ -252,13 +250,11 @@
                 <div class="layui-input-block">
                     <select name="location" id="location" lay-filter="location" >
                         <option value="">Please Choose</option>
-                        <option value="Parking lot">Parking lot</option>
-                        <option value="Sidewalk">Sidewalk</option>
-                        <option value="Bicycle lane">Bicycle lane</option>
-                        <option value="School zone">School zone</option>
-                        <option value="City streets">City streets</option>
-                        <option value="Bridge">Bridge</option>
-                        <option value="Overpass">Overpass</option>
+                        <option value="Park">Park</option>
+                        <option value="Lift">Lift</option>
+                        <option value="Car Park">Car Park</option>
+                        <option value="Swimming Pool">Swimming Pool</option>
+                        <option value="Business District">Business District</option>
                         <!--<option v-for="(item,index) in crimeCategory" v-bind:key="index" :value="item">{{item}}</option>-->
                     </select>
                 </div>
@@ -291,23 +287,23 @@
                 </div>
             </div>
 
-            <div :style='{"padding":"10px","boxShadow":"0 0 0px rgba(255,0,0,.8)","margin":"0 0 10px 0","borderColor":"rgba(255,0,0,.3)","backgroundColor":"#fff","borderRadius":"4px","borderWidth":"0","borderStyle":"solid"}'
-                 class="layui-form-item" pane>
-                <div class="container">
-                    <input type="button" value="Get the longitude and latitude" onclick="getLocation()">
-                </div>
-            </div>
+<!--            <div :style='{"padding":"10px","boxShadow":"0 0 0px rgba(255,0,0,.8)","margin":"0 0 10px 0","borderColor":"rgba(255,0,0,.3)","backgroundColor":"#fff","borderRadius":"4px","borderWidth":"0","borderStyle":"solid"}'-->
+<!--                 class="layui-form-item" pane>-->
+<!--                <div class="container">-->
+<!--                    <input type="button" value="Get the longitude and latitude" onclick="getLocation()">-->
+<!--                </div>-->
+<!--            </div>-->
             <!--跳转到谷歌地图-->
-            <!--<div :style='{"padding":"10px","boxShadow":"0 0 0px rgba(255,0,0,.8)","margin":"0 0 10px 0","borderColor":"rgba(255,0,0,.3)","backgroundColor":"#fff","borderRadius":"4px","borderWidth":"0","borderStyle":"solid"}'
+            <div :style='{"padding":"10px","boxShadow":"0 0 0px rgba(255,0,0,.8)","margin":"0 0 10px 0","borderColor":"rgba(255,0,0,.3)","backgroundColor":"#fff","borderRadius":"4px","borderWidth":"0","borderStyle":"solid"}'
                 class="layui-form-item" pane>
                 <label
                     :style='{"width":"110px","padding":"0 12px 0 0","fontSize":"16px","color":"rgba(0, 0, 0, 1)","textAlign":"right"}'
                     class="layui-form-label">Google Map:</label>
                 <div class="layui-input-block">
                     <input type="button" value="Get the longitude and latitude" onclick="getLocation()">
-                    <!--<button onclick="openGoogleMaps()">Open Google Maps for Longdetail and Lowdetail</button>->
+                    <button onclick="openGoogleMaps()">Open Google Maps for Longdetail and Lowdetail</button>
                 </div>
-            </div>-->
+            </div>
 
             <!--Contract Number-->
             <div :style='{"padding":"10px","boxShadow":"0 0 0px rgba(255,0,0,.8)","margin":"0 0 10px 0","borderColor":"rgba(255,0,0,.3)","backgroundColor":"#fff","borderRadius":"4px","borderWidth":"0","borderStyle":"solid"}'

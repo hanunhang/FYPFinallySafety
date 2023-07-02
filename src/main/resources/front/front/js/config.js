@@ -29,7 +29,7 @@ var swiper = {
  * 个人中心菜单
  */
 var centerMenu = [{
-	name: 'Resident cneter',
+	name: 'Resident center',
 	url: '../' + localStorage.getItem('userTable') + '/center.html'
 }, 
 {

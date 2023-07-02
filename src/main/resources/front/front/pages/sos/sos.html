@@ -253,16 +253,18 @@
 
         var emailContent = "This is an emergency alert. Please take immediate action!   " + "Longitude：" + longitude + ", Latitude：" + latitude;
         var emailSubject = "Emergency Alert";
-        var emailRecipient = "hankun@student.usm.my";
+        var emailRecipient1 = "hankun@student.usm.my;";
+        var emailRecipient2 = "tianci@student.usm.my;";
+        var emailRecipient3 = "lihaodong@student.usm.my";
 
-        var mailtoLink = "mailto:" + emailRecipient + "?subject=" + encodeURIComponent(emailSubject) + "&body=" + encodeURIComponent(emailContent);
+        var mailtoLink = "mailto:" + emailRecipient1 + emailRecipient2 + emailRecipient3 + "?subject=" + encodeURIComponent(emailSubject) + "&body=" + encodeURIComponent(emailContent);
 
         window.location.href = mailtoLink;
       }, function(error) {
-        console.log("无法获取位置信息: " + error.message);
+        console.log("Unable to get location information: " + error.message);
       });
     } else {
-      console.log("浏览器不支持地理定位功能");
+      console.log("Browser does not support geolocation");
     }
   }
 

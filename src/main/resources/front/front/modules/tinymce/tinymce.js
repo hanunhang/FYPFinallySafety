@@ -97,7 +97,7 @@ layui.define(['jquery'],function (exports) {
                 },
                 error: function (res) {
 
-                    failFun("网络错误：" + res.status);
+                    failFun("Network fail：" + res.status);
 
                 }
             };
@@ -114,13 +114,13 @@ layui.define(['jquery'],function (exports) {
         }
 
         option.menu = option.menu ? option.menu : {
-            file: {title: '文件', items: 'newdocument | print preview fullscreen | wordcount'},
-            edit: {title: '编辑', items: 'undo redo | cut copy paste pastetext selectall | searchreplace'},
+            file: {title: 'File', items: 'newdocument | print preview fullscreen | wordcount'},
+            edit: {title: 'Edit', items: 'undo redo | cut copy paste pastetext selectall | searchreplace'},
             format: {
-                title: '格式',
+                title: 'Format',
                 items: 'bold italic underline strikethrough superscript subscript | formats | forecolor backcolor | removeformat'
             },
-            table: {title: '表格', items: 'inserttable tableprops deletetable | cell row column'},
+            table: {title: 'Table', items: 'inserttable tableprops deletetable | cell row column'},
         };
         if(typeof tinymce == 'undefined'){
 
@@ -168,7 +168,7 @@ layui.define(['jquery'],function (exports) {
 
             if(!edit){
 
-                return console.error("编辑器未加载")
+                return console.error("Editor not loaded")
 
             }
 
@@ -176,7 +176,7 @@ layui.define(['jquery'],function (exports) {
 
         } else {
 
-            return console.error("elem错误")
+            return console.error("elem wrong")
 
         }
     }

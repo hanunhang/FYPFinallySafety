@@ -213,15 +213,15 @@
 						<!-- 主键 -->
 						<input type="hidden" name="id" id="id" />
                         <div class="layui-form-item"  :style='{"padding":"10px","boxShadow":"0 0 0px rgba(255,0,0,.8)","margin":"0 0 10px 0","borderColor":"rgba(255,0,0,.3)","backgroundColor":"#fff","borderRadius":"4px","borderWidth":"0","borderStyle":"solid"}'>
-							<label  :style='{"width":"110px","padding":"0 12px 0 0","fontSize":"16px","color":"rgba(0, 0, 0, 1)","textAlign":"right"}' class="layui-form-label">居民号</label>
+							<label  :style='{"width":"110px","padding":"0 12px 0 0","fontSize":"16px","color":"rgba(0, 0, 0, 1)","textAlign":"right"}' class="layui-form-label">Username</label>
 							<div class="layui-input-block input">
-								<input type="text" readonly="readonly" name="juminhao" id="juminhao" placeholder="居民号" autocomplete="off" class="layui-input">
+								<input type="text" readonly="readonly" name="juminhao" id="juminhao" placeholder="Username" autocomplete="off" class="layui-input">
 							</div>
 						</div>
                         <div class="layui-form-item"  :style='{"padding":"10px","boxShadow":"0 0 0px rgba(255,0,0,.8)","margin":"0 0 10px 0","borderColor":"rgba(255,0,0,.3)","backgroundColor":"#fff","borderRadius":"4px","borderWidth":"0","borderStyle":"solid"}'>
-							<label  :style='{"width":"110px","padding":"0 12px 0 0","fontSize":"16px","color":"rgba(0, 0, 0, 1)","textAlign":"right"}' class="layui-form-label">密码</label>
+							<label  :style='{"width":"110px","padding":"0 12px 0 0","fontSize":"16px","color":"rgba(0, 0, 0, 1)","textAlign":"right"}' class="layui-form-label">Password</label>
 							<div class="layui-input-block input">
-								<input type="password" name="mima" id="mima" placeholder="密码" autocomplete="off" class="layui-input">
+								<input type="password" name="mima" id="mima" placeholder="Password" autocomplete="off" class="layui-input">
 							</div>
 						</div>
                         <div class="layui-form-item"  :style='{"padding":"10px","boxShadow":"0 0 0px rgba(255,0,0,.8)","margin":"0 0 10px 0","borderColor":"rgba(255,0,0,.3)","backgroundColor":"#fff","borderRadius":"4px","borderWidth":"0","borderStyle":"solid"}'>
@@ -234,7 +234,7 @@
 							<label  :style='{"width":"110px","padding":"0 12px 0 0","fontSize":"16px","color":"rgba(0, 0, 0, 1)","textAlign":"right"}' class="layui-form-label">Gender</label>
 							<div class="layui-input-block select">
 								<select name="xingbie" id="xingbie" >
-									<option value="">请选择</option>
+									<option value="">Please Choose</option>
 									<option v-for="(item,index) in xingbie" v-bind:key="index" :value="item">{{item}}</option>
 								</select>
 							</div>
@@ -246,17 +246,17 @@
 							</div>
 						</div>
                         <div class="layui-form-item"  :style='{"padding":"10px","boxShadow":"0 0 0px rgba(255,0,0,.8)","margin":"0 0 10px 0","borderColor":"rgba(255,0,0,.3)","backgroundColor":"#fff","borderRadius":"4px","borderWidth":"0","borderStyle":"solid"}'>
-							<label  :style='{"width":"110px","padding":"0 12px 0 0","fontSize":"16px","color":"rgba(0, 0, 0, 1)","textAlign":"right"}' style="opacity: 0;" class="layui-form-label">头像</label>
+							<label  :style='{"width":"110px","padding":"0 12px 0 0","fontSize":"16px","color":"rgba(0, 0, 0, 1)","textAlign":"right"}' style="opacity: 0;" class="layui-form-label">Avatar</label>
 							<div class="layui-input-block">
 								<img id="juminzhaopianImg" style="width: 100px;height: 100px;border-radius: 50%;border: 2px solid #EEEEEE;" :style='{"boxShadow":"0 0 0px rgba(255,0,0,.8)","borderColor":"rgba(145, 143, 132, 1)","backgroundColor":"#fff","borderRadius":"0","borderWidth":"2px","width":"80px","borderStyle":"solid","height":"80px"}' src="../../img/avator.png">
 								<input type="hidden" id="juminzhaopian" name="juminzhaopian" />
 							</div>
 						</div>
 						<div class="layui-form-item"  :style='{"padding":"10px","boxShadow":"0 0 0px rgba(255,0,0,.8)","margin":"0 0 10px 0","borderColor":"rgba(255,0,0,.3)","backgroundColor":"#fff","borderRadius":"4px","borderWidth":"0","borderStyle":"solid"}'>
-							<label  :style='{"width":"110px","padding":"0 12px 0 0","fontSize":"16px","color":"rgba(0, 0, 0, 1)","textAlign":"right"}' style="opacity: 0;" class="layui-form-label">图片</label>
+							<label  :style='{"width":"110px","padding":"0 12px 0 0","fontSize":"16px","color":"rgba(0, 0, 0, 1)","textAlign":"right"}' style="opacity: 0;" class="layui-form-label">Photo</label>
 							<div class="layui-input-block">
 								<button :style='{"padding":"0 20px","boxShadow":"0 0 0px rgba(255,0,0,.5)","margin":"0 10px 0 0","borderColor":"#ccc","backgroundColor":"rgba(223, 195, 153, 1)","color":"rgba(0, 0, 0, 1)","borderRadius":"44px","borderWidth":"0","width":"auto","fontSize":"14px","borderStyle":"solid","height":"44px"}' type="button" class="layui-btn btn-theme" id="juminzhaopianUpload">
-									<i v-if="true" :style='{"color":"rgba(0, 0, 0, 1)","show":true,"fontSize":"14px"}' class="layui-icon">&#xe67c;</i>上传图片
+									<i v-if="true" :style='{"color":"rgba(0, 0, 0, 1)","show":true,"fontSize":"14px"}' class="layui-icon">&#xe67c;</i>Upload Photo
 								</button>
 							</div>
 						</div>
@@ -287,7 +287,7 @@
 
 						<div class="layui-form-item">
 							<div class="layui-input-block" style="display: flex;flex-wrap:wrap;">
-								<button :style='{"padding":"0 10px","boxShadow":"0 0 0px rgba(255,0,0,.5)","margin":"10px auto 0","borderColor":"rgba(213, 169, 122, 1)","backgroundColor":"rgba(223, 195, 153, 1)","color":"rgba(0, 0, 0, 1)","borderRadius":"10px","borderWidth":"10px 0 0","width":"10%","fontSize":"14px","borderStyle":"solid","height":"44px"}' class="layui-btn btn-submit btn-theme" lay-submit lay-filter="*">更新信息</button>
+								<button :style='{"padding":"0 10px","boxShadow":"0 0 0px rgba(255,0,0,.5)","margin":"10px auto 0","borderColor":"rgba(213, 169, 122, 1)","backgroundColor":"rgba(223, 195, 153, 1)","color":"rgba(0, 0, 0, 1)","borderRadius":"10px","borderWidth":"10px 0 0","width":"10%","fontSize":"14px","borderStyle":"solid","height":"44px"}' class="layui-btn btn-submit btn-theme" lay-submit lay-filter="*">Change</button>
                 <button :style='{"padding":"0 10px","boxShadow":"0 0 0px rgba(255,0,0,.5)","margin":"10px auto","borderColor":"rgba(143, 143, 143, 1)","backgroundColor":"rgba(217, 217, 217, 1)","color":"rgba(143, 143, 143, 1)","borderRadius":"8px","borderWidth":"10px 0 0","width":"10%","fontSize":"14px","borderStyle":"solid","height":"44px"}' @click="logout" class="layui-btn btn-submit">LogOut</button>
 							</div>
 						</div>
@@ -449,7 +449,7 @@
 					}
 				});
 
-				vue.xingbie = '男,女'.split(',')
+				vue.xingbie = 'male,female'.split(',')
 				// 上传图片
 				var juminzhaopianUpload = upload.render({
 					//绑定元素
@@ -473,7 +473,7 @@
 						console.log(res);
 						layer.closeAll();
 						if (res.code == 0) {
-							layer.msg("上传成功", {
+							layer.msg("Upload Successful", {
 								time: 2000,
 								icon: 6
 							})
@@ -501,7 +501,7 @@
 				let table = localStorage.getItem("userTable");
 
 				if(!table){
-					layer.msg('请先登录', {
+					layer.msg('Please login first', {
 						time: 2000,
 						icon: 5
 					}, function() {
@@ -521,35 +521,35 @@
 				form.on('submit(*)', function(data) {
 					data = data.field;
 					if(!data.juminhao){
-						layer.msg('居民号不能为空', {
+						layer.msg('Username cannot empty', {
 														time: 2000,
 														icon: 5
 												});
 						return false
 					}
 					if(!data.mima){
-						layer.msg('密码不能为空', {
+						layer.msg('Password cannot empty', {
 														time: 2000,
 														icon: 5
 												});
 						return false
 					}
 					if(!isIntNumer(data.nianling)){
-						layer.msg('年龄应输入整数', {
+						layer.msg('Age should be integer', {
 														time: 2000,
 														icon: 5
 												});
 						return false
 					}
 					if(!isMobile(data.juminshouji)){
-						layer.msg('居民手机应输入手机格式', {
+						layer.msg('Residents mobile phones should be entered in the mobile phone format', {
 														time: 2000,
 														icon: 5
 												});
 						return false
 					}
 					http.requestJson(table + '/update', 'post', data, function(res) {
-						layer.msg('Change成功', {
+						layer.msg('Change Successful', {
 							time: 2000,
 							icon: 6
 						}, function() {
